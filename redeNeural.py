@@ -1,10 +1,10 @@
 from random import randint as r
 
-# 1 Teve dificuldade na aprendizagem de leitura -> Dislexia
-# 2 Tem dificuldade em soletrar palavras -> Dislexia
-# 3 Costuma deixar projetos pela metade -> TDAH
-# 4 Frequentemente se distrai com barulhos em volta -> TDAH
-# 5 Prefere ler artigos curtos e revistas do que livros extensos -> Dislexia
+# 1 Dificuldade para focalizar objetos de perto -> Hipermetropia
+# 2 Sensação de olho pesado e cansado -> Hipermetropia
+# 3 Embaçamento da visão -> Ambos
+# 4 Visão turva, baça, distorcida ou desfocada ao longe -> Miopia
+# 5 Necessidade de semicerrar os olhos para conseguir ver melhor -> Miopia
 
 tabela_input = [
     [0, 0, 0, 0, 0],
@@ -15,9 +15,9 @@ tabela_input = [
     [0, 1, 1, 0, 1],
 ]
 
-# 0 -> TDAH e 1 -> Dislexia
+# 0 -> Hipermetropia e 1 -> Miopia
 
-saida_esperada = [0, 1, 0, 0, 1, 1]
+saida_esperada = [0, 1, 1, 0, 0, 1]
 
 peso = [0, 0, 0, 0, 0]
 
@@ -71,35 +71,3 @@ while error != 0:
     print()
 
 print("Aprendeu!!")
-
-print()
-print()
-
-print("Agora responda as perguntas (1 para sim e 0 para não):")
-
-entrada = [0, 0, 0, 0, 0]
-
-print("Teve dificuldade na aprendizagem de leitura?")
-entrada[0] = input()
-
-print("Tem dificuldade em soletrar palavras?")
-entrada[1] = input()
-
-print("Costuma deixar projetos pela metade?")
-entrada[2] = input()
-
-print("Frequentemente se distrai com barulhos em volta?")
-entrada[3] = input()
-
-print("Prefere ler artigos curtos e revistas do que livros extensos?")
-entrada[4] = input()
-
-soma = 0
-
-for j in range(len(entrada)):
-    soma += int(entrada[j]) * peso[j]
-
-if soma == 0:
-    print("Você tem TDAH")
-else:
-    print("Você tem dislexia")
