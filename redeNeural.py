@@ -70,4 +70,4 @@ while error != 0:
     error = calculaPeso()
     print()
 
-print("Aprendeu!!")
+print("A rede neural aprendeu!")
