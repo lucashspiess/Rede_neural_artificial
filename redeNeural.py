@@ -70,4 +70,36 @@ while error != 0:
     error = calculaPeso()
     print()
 
-print("A rede neural aprendeu!")
+print("A rede neural convergiu!")
+
+print()
+print()
+
+print("Agora responda as perguntas relativas à apenas um olho (1 para sim e 0 para não):")
+
+entrada = [0, 0, 0, 0, 0]
+
+print("Tem dificuldade para focalizar objetos de perto?")
+entrada[0] = input()
+
+print("Tem sensação de olho pesado e cansado?")
+entrada[1] = input()
+
+print("Tem embaçamento da visão?")
+entrada[2] = input()
+
+print("Tem visão turva, baça, distorcida ou desfocada ao longe?")
+entrada[3] = input()
+
+print("Tem a necessidade de semicerrar os olhos para conseguir ver melhor?")
+entrada[4] = input()
+
+soma = 0
+
+for j in range(len(entrada)):
+    soma += int(entrada[j]) * peso[j]
+
+if ativacao(soma) == 0:
+    print("Você tem Hipermetropia nesse olho.")
+else:
+    print("Você tem Miopia nesse olho.")
