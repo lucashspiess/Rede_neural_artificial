@@ -3,7 +3,7 @@ from random import randint as r
 # 1 Dificuldade para focalizar objetos de perto -> Hipermetropia
 # 2 Sensação de olho pesado e cansado -> Hipermetropia
 # 3 Embaçamento da visão -> Ambos
-# 4 Visão turva, baça, distorcida ou desfocada ao longe -> Miopia
+# 4 Visão turva, distorcida ou desfocada ao longe -> Miopia
 # 5 Necessidade de semicerrar os olhos para conseguir ver melhor -> Miopia
 
 tabela_input = [
@@ -40,12 +40,17 @@ def ativacao(sum):
         return 0
 
 
+def soma(linha):
+    somatorio = 0
+    for k in range(len(peso)):
+        somatorio += tabela_input[linha][k] * peso[k]
+    return somatorio
+
+
 def calculaPeso():
     erro = 0
     for s in range(len(tabela_input)):
-        sum = 0
-        for k in range(len(peso)):
-            sum += tabela_input[s][k] * peso[k]
+        sum = soma(s)
         print(tabela_input[s], "->", ativacao(sum))
 
         if ativacao(sum) != saida_esperada[s]:
@@ -88,7 +93,7 @@ entrada[1] = input()
 print("Tem embaçamento da visão?")
 entrada[2] = input()
 
-print("Tem visão turva, baça, distorcida ou desfocada ao longe?")
+print("Tem visão turva, distorcida ou desfocada ao longe?")
 entrada[3] = input()
 
 print("Tem a necessidade de semicerrar os olhos para conseguir ver melhor?")
@@ -100,6 +105,6 @@ for j in range(len(entrada)):
     soma += int(entrada[j]) * peso[j]
 
 if ativacao(soma) == 0:
-    print("Você tem Hipermetropia nesse olho.")
+    print("Tem Hipermetropia nesse olho.")
 else:
-    print("Você tem Miopia nesse olho.")
+    print("Tem Miopia nesse olho.")
