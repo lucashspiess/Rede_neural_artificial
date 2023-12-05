@@ -105,6 +105,6 @@ for j in range(len(entrada)):
     soma += int(entrada[j]) * peso[j]
 
 if ativacao(soma) == 0:
-    print("Tem Hipermetropia nesse olho.")
+    print("Resultado:", ativacao(soma), "- Hipermetropia")
 else:
-    print("Tem Miopia nesse olho.")
+    print("Resultado:", ativacao(soma), "- Miopia")
